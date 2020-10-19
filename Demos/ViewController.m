@@ -31,7 +31,7 @@
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     
-    [self deepCopyObject:@[]];
+//    [self deepCopyObject:@[]];
 
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -153,7 +153,7 @@
     
     if (indexPath.row == 0) {
         ExcelViewController *vc = [[ExcelViewController alloc] init];
-        NSMutableArray *arr = [FromData getGoodData];
+        NSMutableArray *arr = [FromData getGoodData:YES];
         vc.array = arr;
         vc.allShow = YES;
         [self.navigationController pushViewController:vc animated:YES];

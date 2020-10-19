@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)getMyGroupTag;
 + (NSString *)getMyAreaTag;
-+ (NSMutableArray *)getGoodData; //
++ (NSMutableArray *)getGoodData:(BOOL)useICan; //
 + (NSMutableArray *)groupArray;
 + (NSArray *)getListSource; // 目录页 列表数据
 @end

@@ -19,25 +19,10 @@
 		6F360F392497CAA60066E67D /* ExcelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F360F342497CAA60066E67D /* ExcelCell.m */; };
 		6F360F3C2497CBD40066E67D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F360F3B2497CBD40066E67D /* BaseViewController.m */; };
 		6F360F3F2497CE220066E67D /* FromData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F360F3E2497CE220066E67D /* FromData.m */; };
-		6F360F412497D69F0066E67D /* 省直.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F402497D69F0066E67D /* 省直.txt */; };
-		6F360F432497D6FA0066E67D /* 司法.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F422497D6FA0066E67D /* 司法.txt */; };
-		6F360F452497D7470066E67D /* 成都.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F442497D7470066E67D /* 成都.txt */; };
-		6F360F472497D79D0066E67D /* 雅安.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F462497D79D0066E67D /* 雅安.txt */; };
-		6F360F492497D7CE0066E67D /* 遂宁.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F482497D7CE0066E67D /* 遂宁.txt */; };
-		6F360F4B2497D8010066E67D /* 乐山.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F4A2497D8010066E67D /* 乐山.txt */; };
-		6F360F4D2497D8640066E67D /* 广安.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F4C2497D8640066E67D /* 广安.txt */; };
-		6F360F4F2497D89C0066E67D /* 宜宾.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F4E2497D89C0066E67D /* 宜宾.txt */; };
-		6F360F512497D8C60066E67D /* 德阳.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F502497D8C60066E67D /* 德阳.txt */; };
-		6F360F532497D8F40066E67D /* 阿坝.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F522497D8F40066E67D /* 阿坝.txt */; };
-		6F360F552497D9200066E67D /* 巴中.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F542497D9200066E67D /* 巴中.txt */; };
-		6F360F572497D9630066E67D /* 广元.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F562497D9630066E67D /* 广元.txt */; };
-		6F360F592497D9A50066E67D /* 绵阳.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F582497D9A50066E67D /* 绵阳.txt */; };
-		6F360F5B2497D9D40066E67D /* 泸州.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F5A2497D9D40066E67D /* 泸州.txt */; };
-		6F360F5D2497D9FF0066E67D /* 南充.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F5C2497D9FF0066E67D /* 南充.txt */; };
-		6F360F5F2497DA320066E67D /* 自贡.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F5E2497DA320066E67D /* 自贡.txt */; };
-		6F360F612497DA650066E67D /* 内江.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F602497DA650066E67D /* 内江.txt */; };
-		6F360F632497DA970066E67D /* 资阳.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F622497DA970066E67D /* 资阳.txt */; };
-		6F360F652497DAD60066E67D /* 甘孜.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F642497DAD60066E67D /* 甘孜.txt */; };
+		6F360F412497D69F0066E67D /* 中央党群机关.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F402497D69F0066E67D /* 中央党群机关.txt */; };
+		6FFD0D7F253D337200EB40F9 /* 中央国家行政机关参公事业单位.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6FFD0D7C253D337200EB40F9 /* 中央国家行政机关参公事业单位.txt */; };
+		6FFD0D80253D337200EB40F9 /* 中央国家机关本级.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6FFD0D7D253D337200EB40F9 /* 中央国家机关本级.txt */; };
+		6FFD0D81253D337200EB40F9 /* 中央国家机关省级及以下级.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6FFD0D7E253D337200EB40F9 /* 中央国家机关省级及以下级.txt */; };
 		AC083042249B006300D68DDD /* RegExp.m in Sources */ = {isa = PBXBuildFile; fileRef = AC083041249B006300D68DDD /* RegExp.m */; };
 		ACAEFEAF24987A6000B88214 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAEFE9624987A6000B88214 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		ACAEFEB024987A6000B88214 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAEFE9F24987A6000B88214 /* ViewController+MASAdditions.m */; };
@@ -49,7 +34,6 @@
 		ACAEFEB624987A6000B88214 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAEFEAA24987A6000B88214 /* MASConstraint.m */; };
 		ACAEFEB724987A6000B88214 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAEFEAC24987A6000B88214 /* MASViewConstraint.m */; };
 		ACAEFEB824987A6000B88214 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAEFEAD24987A6000B88214 /* MASViewAttribute.m */; };
-		ACAEFEBB2498F87300B88214 /* 凉山.txt in Resources */ = {isa = PBXBuildFile; fileRef = ACAEFEBA2498F87300B88214 /* 凉山.txt */; };
 		ACB93910249B44EF0017EF7C /* ExcelGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB9390F249B44EF0017EF7C /* ExcelGroupViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -75,25 +59,10 @@
 		6F360F3B2497CBD40066E67D /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		6F360F3D2497CE220066E67D /* FromData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FromData.h; sourceTree = "<group>"; };
 		6F360F3E2497CE220066E67D /* FromData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FromData.m; sourceTree = "<group>"; };
-		6F360F402497D69F0066E67D /* 省直.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "省直.txt"; sourceTree = "<group>"; };
-		6F360F422497D6FA0066E67D /* 司法.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "司法.txt"; sourceTree = "<group>"; };
-		6F360F442497D7470066E67D /* 成都.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "成都.txt"; sourceTree = "<group>"; };
-		6F360F462497D79D0066E67D /* 雅安.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "雅安.txt"; sourceTree = "<group>"; };
-		6F360F482497D7CE0066E67D /* 遂宁.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "遂宁.txt"; sourceTree = "<group>"; };
-		6F360F4A2497D8010066E67D /* 乐山.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "乐山.txt"; sourceTree = "<group>"; };
-		6F360F4C2497D8640066E67D /* 广安.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "广安.txt"; sourceTree = "<group>"; };
-		6F360F4E2497D89C0066E67D /* 宜宾.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "宜宾.txt"; sourceTree = "<group>"; };
-		6F360F502497D8C60066E67D /* 德阳.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "德阳.txt"; sourceTree = "<group>"; };
-		6F360F522497D8F40066E67D /* 阿坝.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "阿坝.txt"; sourceTree = "<group>"; };
-		6F360F542497D9200066E67D /* 巴中.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "巴中.txt"; sourceTree = "<group>"; };
-		6F360F562497D9630066E67D /* 广元.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "广元.txt"; sourceTree = "<group>"; };
-		6F360F582497D9A50066E67D /* 绵阳.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "绵阳.txt"; sourceTree = "<group>"; };
-		6F360F5A2497D9D40066E67D /* 泸州.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "泸州.txt"; sourceTree = "<group>"; };
-		6F360F5C2497D9FF0066E67D /* 南充.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "南充.txt"; sourceTree = "<group>"; };
-		6F360F5E2497DA320066E67D /* 自贡.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "自贡.txt"; sourceTree = "<group>"; };
-		6F360F602497DA650066E67D /* 内江.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "内江.txt"; sourceTree = "<group>"; };
-		6F360F622497DA970066E67D /* 资阳.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "资阳.txt"; sourceTree = "<group>"; };
-		6F360F642497DAD60066E67D /* 甘孜.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "甘孜.txt"; sourceTree = "<group>"; };
+		6F360F402497D69F0066E67D /* 中央党群机关.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "中央党群机关.txt"; sourceTree = "<group>"; };
+		6FFD0D7C253D337200EB40F9 /* 中央国家行政机关参公事业单位.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "中央国家行政机关参公事业单位.txt"; sourceTree = "<group>"; };
+		6FFD0D7D253D337200EB40F9 /* 中央国家机关本级.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "中央国家机关本级.txt"; sourceTree = "<group>"; };
+		6FFD0D7E253D337200EB40F9 /* 中央国家机关省级及以下级.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "中央国家机关省级及以下级.txt"; sourceTree = "<group>"; };
 		AC083040249B006300D68DDD /* RegExp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegExp.h; sourceTree = "<group>"; };
 		AC083041249B006300D68DDD /* RegExp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegExp.m; sourceTree = "<group>"; };
 		ACAEFE9524987A6000B88214 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -121,7 +90,6 @@
 		ACAEFEAB24987A6000B88214 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		ACAEFEAC24987A6000B88214 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
 		ACAEFEAD24987A6000B88214 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
-		ACAEFEBA2498F87300B88214 /* 凉山.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "凉山.txt"; sourceTree = "<group>"; };
 		ACB9390E249B44EF0017EF7C /* ExcelGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExcelGroupViewController.h; sourceTree = "<group>"; };
 		ACB9390F249B44EF0017EF7C /* ExcelGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExcelGroupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,26 +172,10 @@
 		AC58D046249AF5A300D09335 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				ACAEFEBA2498F87300B88214 /* 凉山.txt */,
-				6F360F642497DAD60066E67D /* 甘孜.txt */,
-				6F360F622497DA970066E67D /* 资阳.txt */,
-				6F360F602497DA650066E67D /* 内江.txt */,
-				6F360F5E2497DA320066E67D /* 自贡.txt */,
-				6F360F5C2497D9FF0066E67D /* 南充.txt */,
-				6F360F5A2497D9D40066E67D /* 泸州.txt */,
-				6F360F582497D9A50066E67D /* 绵阳.txt */,
-				6F360F562497D9630066E67D /* 广元.txt */,
-				6F360F542497D9200066E67D /* 巴中.txt */,
-				6F360F522497D8F40066E67D /* 阿坝.txt */,
-				6F360F502497D8C60066E67D /* 德阳.txt */,
-				6F360F4E2497D89C0066E67D /* 宜宾.txt */,
-				6F360F4C2497D8640066E67D /* 广安.txt */,
-				6F360F4A2497D8010066E67D /* 乐山.txt */,
-				6F360F482497D7CE0066E67D /* 遂宁.txt */,
-				6F360F462497D79D0066E67D /* 雅安.txt */,
-				6F360F442497D7470066E67D /* 成都.txt */,
-				6F360F422497D6FA0066E67D /* 司法.txt */,
-				6F360F402497D69F0066E67D /* 省直.txt */,
+				6F360F402497D69F0066E67D /* 中央党群机关.txt */,
+				6FFD0D7D253D337200EB40F9 /* 中央国家机关本级.txt */,
+				6FFD0D7E253D337200EB40F9 /* 中央国家机关省级及以下级.txt */,
+				6FFD0D7C253D337200EB40F9 /* 中央国家行政机关参公事业单位.txt */,
 				6F360F332497CAA60066E67D /* myForm.txt */,
 			);
 			path = data;
@@ -326,30 +278,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F360F552497D9200066E67D /* 巴中.txt in Resources */,
-				6F360F512497D8C60066E67D /* 德阳.txt in Resources */,
-				6F360F412497D69F0066E67D /* 省直.txt in Resources */,
-				6F360F5D2497D9FF0066E67D /* 南充.txt in Resources */,
-				6F360F452497D7470066E67D /* 成都.txt in Resources */,
-				6F360F4F2497D89C0066E67D /* 宜宾.txt in Resources */,
-				6F360F592497D9A50066E67D /* 绵阳.txt in Resources */,
-				6F360F472497D79D0066E67D /* 雅安.txt in Resources */,
-				6F360F572497D9630066E67D /* 广元.txt in Resources */,
-				6F360F612497DA650066E67D /* 内江.txt in Resources */,
+				6F360F412497D69F0066E67D /* 中央党群机关.txt in Resources */,
 				6F360F282497CA9A0066E67D /* LaunchScreen.storyboard in Resources */,
-				6F360F492497D7CE0066E67D /* 遂宁.txt in Resources */,
-				6F360F5B2497D9D40066E67D /* 泸州.txt in Resources */,
-				6F360F4B2497D8010066E67D /* 乐山.txt in Resources */,
+				6FFD0D81253D337200EB40F9 /* 中央国家机关省级及以下级.txt in Resources */,
 				6F360F252497CA9A0066E67D /* Assets.xcassets in Resources */,
 				6F360F382497CAA60066E67D /* myForm.txt in Resources */,
-				6F360F5F2497DA320066E67D /* 自贡.txt in Resources */,
 				6F360F232497CA980066E67D /* Main.storyboard in Resources */,
-				6F360F432497D6FA0066E67D /* 司法.txt in Resources */,
-				6F360F532497D8F40066E67D /* 阿坝.txt in Resources */,
-				6F360F4D2497D8640066E67D /* 广安.txt in Resources */,
-				6F360F632497DA970066E67D /* 资阳.txt in Resources */,
-				ACAEFEBB2498F87300B88214 /* 凉山.txt in Resources */,
-				6F360F652497DAD60066E67D /* 甘孜.txt in Resources */,
+				6FFD0D80253D337200EB40F9 /* 中央国家机关本级.txt in Resources */,
+				6FFD0D7F253D337200EB40F9 /* 中央国家行政机关参公事业单位.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
