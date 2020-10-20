@@ -208,6 +208,7 @@ static NSString *areaTag = @"--area--";
 
 + (NSArray *)handleForm:(NSArray *)shiArr formName: (NSString *)formName {
     NSMutableArray *array_tatal = [NSMutableArray arrayWithCapacity:100]; // 不分组
+    NSLog(@"开始读取%@的数据",formName);
     for (NSString *fo in shiArr) {
         NSString *myStr = [self replaceSepText:fo];
         NSArray *a = [myStr componentsSeparatedByString:@" "];
@@ -218,8 +219,6 @@ static NSString *areaTag = @"--area--";
                 [realArr addObject:obj];
             }
         }
-
-        NSString *info = fo;
         BOOL special = NO;  // 专业
         BOOL academic = NO; // 学历
         BOOL degree = NO; // 学位
@@ -233,7 +232,7 @@ static NSString *areaTag = @"--area--";
         NSString *zhengzhimianmaoStr = @"";
         NSString *baseExpStr = @"";
         if (realArr.count > 16) {
-            //党群机关：专业限制 13(M)、学历 14、学位 15、政治面貌 16
+            //专业限制 12(M)、学历 13、学位 14、政治面貌 15、备注 17
             zhuanyeStr = realArr[12];
             xueliStr = realArr[13];
             xueweiStr = realArr[14];
@@ -242,23 +241,24 @@ static NSString *areaTag = @"--area--";
             
         }
         special = (
-        [zhuanyeStr containsString:@"不限"]
-        || [zhuanyeStr containsString:@"无要求"]
-        || [zhuanyeStr containsString:@"电子商务"]
-        ) ;
+                   [zhuanyeStr containsString:@"不限"]
+                   || [zhuanyeStr containsString:@"无要求"]
+                   || [zhuanyeStr containsString:@"电子商务"]
+//                   [zhuanyeStr containsString:@"管理类"]
+                    );
         academic = (
                     [xueliStr containsString:@"本科"]
-//                    || [xueliStr containsString:@"专"]
+                    || [xueliStr containsString:@"专"]
                     );
         degree = (
                   [xueweiStr containsString:@"不限"]
-//                  || [xueweiStr containsString:@"无要求"]
+                  || [xueweiStr containsString:@"无要求"]
                   || [xueweiStr containsString:@"与最高学历相对应的学位"]
+                  || [xueweiStr containsString:@"学士"]
                   );
         political = (
-                     [zhengzhimianmaoStr containsString:@"不限"]
-                     || [zhengzhimianmaoStr containsString:@"无要求"]
-                     || [zhengzhimianmaoStr containsString:@"团员"]
+                     ![zhengzhimianmaoStr containsString:@"团员"]
+                     && ![zhengzhimianmaoStr containsString:@"党员"]
                      );
         baseExp = (
                    [baseExpStr containsString:@"不限"]
@@ -267,24 +267,36 @@ static NSString *areaTag = @"--area--";
                    );
         
         qt = (
-              ([myStr containsString:@"四川"] || [myStr containsString:@"成都"])
-              && [myStr containsString:@"西部地区和艰苦边远地区职位"]
+//              ([myStr containsString:@"四川"] || [myStr containsString:@"成都"])
+              [myStr containsString:@"西部地区和艰苦边远地区职位"]
               && ![myStr containsString:@"具有英语六级证书"]
               && ![myStr containsString:@"具有英语四级证书"]
               && ![myStr containsString:@"限应届高等院校毕业生报考"]
+              && ![myStr containsString:@"限高校应届毕业生"]
+              && ![myStr containsString:@"30周岁以下"]
+              && ![myStr containsString:@"2021年应届高校毕业生"]
+              && ![myStr containsString:@"2020年及以后年度毕业的高校毕业生"]
+              && ![myStr containsString:@"2019年及以后年度毕业的高校毕业生"]
+              && ![myStr containsString:@"2018年及以后年度毕业的高校毕业生"]
+              && ![myStr containsString:@"2017年及以后年度毕业的高校毕业生"]
+              && ![myStr containsString:@"2016年及以后年度毕业的高校毕业生"]
+              && ![myStr containsString:@"2015年及以后年度毕业的高校毕业生"]
               );
-        
+        if (qt && ([myStr containsString:@"市生源"] || [myStr containsString:@"省生源"] || [myStr containsString:@"县生源"])) {
+            if ([myStr containsString:@"四川"] || [myStr containsString:@"成都"] || [myStr containsString:@"简阳"]) {
+                qt = YES;
+            } else {
+                qt = NO;
+            }
+        }
         if (special && academic && degree && political && baseExp && qt) {
-            NSString *myInfo = [NSString stringWithFormat:@"%@%@%@",info,groupTag,formName];
+            NSString *myInfo = [NSString stringWithFormat:@"%@%@%@",myStr,groupTag,formName];
             [array_tatal addObject:myInfo];
             
-//            if (qt) {
-//                NSString *myInfo = [NSString stringWithFormat:@"%@%@%@",info,groupTag,formName];
-//                [array_tatal addObject:myInfo];
-//            }
         }
         
     }
+    NSLog(@"%@筛选后的数据：%ld",formName,array_tatal.count);
     return array_tatal;
 }
 
