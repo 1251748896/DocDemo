@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSMutableArray *)getGoodData:(BOOL)useICan; //
 + (NSMutableArray *)groupArray;
 + (NSArray *)getListSource; // 目录页 列表数据
++ (NSArray *)sempleArray;// 针对少部分岗位的，指定筛选
 @end
 
 NS_ASSUME_NONNULL_END

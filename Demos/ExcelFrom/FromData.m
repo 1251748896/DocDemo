@@ -147,42 +147,30 @@ static NSString *areaTag = @"--area--";
     NSArray * arr = [self peopleCount];
     NSMutableArray *temp = [NSMutableArray arrayWithCapacity:3500];
     for (NSString *baseStr in arr) {
-        id tag;
-        for(int i =0; i < [baseStr length]; i++)
-        {
-            tag = [baseStr substringWithRange:NSMakeRange(i, 1)];
-            NSString *type = NSStringFromClass([tag class]);
-            
-            if ([type isEqualToString:@"NSTaggedPointerString"]) {
-                BOOL isNum = [RegExp validatePassword:tag];
-                BOOL isChina = [RegExp validateNickname:tag];
-                if (!isChina && !isNum) {
-                    break;
-                }
-            }
+        NSArray *tempArr = [baseStr componentsSeparatedByString:@" "];
+        NSString *showString = @"";
+        for (NSString *obj in tempArr) {
+            showString = [NSString stringWithFormat:@"%@-%@",showString,obj];
         }
-        if (tag) {
-            NSArray *tempArr = [baseStr componentsSeparatedByString:tag];
-            NSString *bm = [tempArr firstObject];
-            NSString *rs = [tempArr lastObject];
-            
-            NSString *code_cou = [NSString stringWithFormat:@"%@-%@",bm,rs];
-            [temp addObject:code_cou];
-        } else {
-            NSLog(@"baseStr = %@",baseStr);
-        }
+        [temp addObject:showString];
     }
     return temp;
 }
 
+// 报名人数表格数据
 + (NSArray *)peopleCount {
     if (payPeopleCountArray) {
         return payPeopleCountArray;
     }
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"myForm" ofType:@"txt"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"报名数量表" ofType:@"txt"];
     NSString *content = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     NSArray *arr = [content componentsSeparatedByString:@"\n"];
-    payPeopleCountArray = arr;
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:arr.count];
+    for (NSString *baseStr in arr) {
+        NSString *temp = [self replaceSepText:baseStr];
+        [array addObject:temp];
+    }
+    payPeopleCountArray = array;
     return payPeopleCountArray;
 }
 
@@ -265,15 +253,22 @@ static NSString *areaTag = @"--area--";
                    || [baseExpStr containsString:@"无限制"]
                    || [baseExpStr containsString:@"无要求"]
                    );
+        baseExp = (
+        ![baseExpStr containsString:@"村官"]
+        && ![baseExpStr containsString:@"三支一扶"]
+        );
         
         qt = (
 //              ([myStr containsString:@"四川"] || [myStr containsString:@"成都"])
-              [myStr containsString:@"西部地区和艰苦边远地区职位"]
-              && ![myStr containsString:@"具有英语六级证书"]
+//              ![myStr containsString:@"西部地区和艰苦边远地区职位"]
+              ![myStr containsString:@"具有英语六级证书"]
+              && ![myStr containsString:@"英语六级"]
               && ![myStr containsString:@"具有英语四级证书"]
+              && ![myStr containsString:@"英语四级"]
               && ![myStr containsString:@"限应届高等院校毕业生报考"]
               && ![myStr containsString:@"限高校应届毕业生"]
               && ![myStr containsString:@"30周岁以下"]
+              && ![myStr containsString:@"女性"]
               && ![myStr containsString:@"2021年应届高校毕业生"]
               && ![myStr containsString:@"2020年及以后年度毕业的高校毕业生"]
               && ![myStr containsString:@"2019年及以后年度毕业的高校毕业生"]
@@ -281,6 +276,7 @@ static NSString *areaTag = @"--area--";
               && ![myStr containsString:@"2017年及以后年度毕业的高校毕业生"]
               && ![myStr containsString:@"2016年及以后年度毕业的高校毕业生"]
               && ![myStr containsString:@"2015年及以后年度毕业的高校毕业生"]
+              && ![myStr containsString:@"限普通高等学校2021年应届毕业生"]
               );
         if (qt && ([myStr containsString:@"市生源"] || [myStr containsString:@"省生源"] || [myStr containsString:@"县生源"])) {
             if ([myStr containsString:@"四川"] || [myStr containsString:@"成都"] || [myStr containsString:@"简阳"]) {
@@ -301,6 +297,7 @@ static NSString *areaTag = @"--area--";
 }
 
 + (void)calculateICanArr {
+    
     NSArray *arr1 = [self getDataSource:@"中央党群机关"];
     NSArray *a1 = [self handleForm:arr1 formName:@"中央党群机关"];
     
@@ -335,8 +332,44 @@ static NSString *areaTag = @"--area--";
 }
 
 + (NSArray *)getListSource {
-    NSArray *keys = @[@"可选岗位汇总",@"可选岗位-分组汇总",@"报名人数汇总"];
+    NSArray *keys = @[@"1111",@"222222",@"33333"];
     return keys;
+}
+
++ (NSArray *)sempleArray {
+    NSArray *codeArr = [self sempleCodes]; // 可以报名的岗位
+    NSArray *formData = [self allCodeArray]; // 所有岗位报名人数统计
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:20];
+    for (NSString *canCode in codeArr) {
+        NSString *w = [[canCode componentsSeparatedByString:@"---"] firstObject];
+        for (NSString *info in formData) {
+            if ([info containsString:w]) {
+                NSString *te = [NSString stringWithFormat:@"%@--%@",canCode,info];
+                [array addObject:te];
+                break;
+            }
+        }
+    }
+    return array;
+}
+
++ (NSArray *)sempleCodes {
+    return @[@"33011111---2人",
+             @"33006068---1人",
+             @"33004055---2人",
+             @"33015128---1人",
+             @"33014131---1人",
+             @"33016158---1人",
+             @"33023170---1人",
+             @"34015072---2人",
+             @"34015080---1人",
+             @"31019056---1人",
+             @"43012002---2人",
+             @"43023003---4人",
+             @"43006001---4人",
+             @"43015003---2人",
+             @"43003001---4人"
+    ];
 }
 
 @end

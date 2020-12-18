@@ -42,6 +42,9 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
+    for (NSString *obj in _curArray) {
+        NSLog(@"%ld.----%@",[_curArray indexOfObject:obj],obj);
+    }
 }
 
 - (void)search {
@@ -64,7 +67,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 400;
+    return 100;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -10,6 +10,10 @@
 #import "ExcelViewController.h"
 #import "FromData.h"
 #import "ExcelGroupViewController.h"
+#import "FeedBackListController.h"
+#import "Reachability.h"
+#import "Http.h"
+
 @interface ViewController ()
 
 @end
@@ -19,7 +23,69 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+
+//    [self makeKaoShi];
+//    [self deepCopyObject:@[]];
+//    [self internetStatus];
+    [self getToken];
+
+}
+
+
+- (void)getToken {
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    if (token) {
+        [self tableViewPage];
+        return;
+    }
+    NSDictionary *p = @{
+        @"terminalName":@"iPhone 11 Pro Max",
+        @"mobileNo":@"15766669990",
+        @"scope":@"logon",
+        @"terminal":@"app",
+        @"isDriver":@"1",
+        @"smsCode":@"1234"
+    };
+    [Http post:p url:@"/api/services/Auth/Login/PostLogin" callback:^(id _Nonnull data) {
+        NSLog(@"datattt = %@",data[@"result"][@"tokenValue"]);
+        NSString *token = data[@"result"][@"tokenValue"];
+        [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"token"];
+        [self tableViewPage];
+    }];
+}
+
+-(NSString *)internetStatus {
     
+    Reachability *reachability   = [Reachability reachabilityWithHostName:@"www.apple.com"];
+    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
+    NSString *net = @"WIFI";
+    switch (internetStatus) {
+        case ReachableViaWiFi:
+            net = @"WIFI";
+            break;
+            
+        case ReachableViaWWAN:
+            net = @"蜂窝数据";
+            //net = [self getNetType ];   //判断具体类型
+            break;
+            
+        case NotReachable:
+            net = @"当前无网路连接";
+            
+        default:
+            break;
+    }
+    NSLog(@"net= %@",net);
+    return net;
+}
+- (void)tableViewPage {
+    FeedBackListController *vc = [[FeedBackListController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (void)makeKaoShi {
     _array = [NSMutableArray arrayWithCapacity:10];
     NSArray *keys = [FromData getListSource];
     [_array addObjectsFromArray:keys];
@@ -30,10 +96,8 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
-    
-//    [self deepCopyObject:@[]];
-
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _array.count;
 }
@@ -150,21 +214,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
-    if (indexPath.row == 0) {
-        ExcelViewController *vc = [[ExcelViewController alloc] init];
-        NSMutableArray *arr = [FromData getGoodData:YES];
-        vc.array = arr;
-        vc.allShow = YES;
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-    
-    if (indexPath.row == 1) {
-        ExcelGroupViewController *vc = [[ExcelGroupViewController alloc] init];
-        NSMutableArray *arr = [FromData groupArray];
-        vc.array = arr;
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+//    if (indexPath.row == 0) {
+//        ExcelViewController *vc = [[ExcelViewController alloc] init];
+//        NSArray *arr = [FromData sempleArray];
+//        vc.array = arr.mutableCopy;
+//        vc.allShow = YES;
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }
+//
+//    if (indexPath.row == 1) {
+//        ExcelGroupViewController *vc = [[ExcelGroupViewController alloc] init];
+//        NSMutableArray *arr = [FromData groupArray];
+//        vc.array = arr;
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }
     
 }
 

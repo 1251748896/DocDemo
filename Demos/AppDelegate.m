@@ -17,6 +17,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    return YES;
+}
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    NSLog(@"url = %@",url);
+    
+    if(url){
+        //显示一下从A获取的url，url = projectB://openBSecondPage,host = openBSecondPage
+        NSString *text = [NSString stringWithFormat:@"url = %@,host = %@",[url absoluteString],[url host]];
+        NSLog(@"text = %@",text);
+        //根据传过来的url的host进行一些操作
+        if ([[url host]isEqualToString:@"openBSecondPage"]) {
+            //跳转到第二个界面
+            
+        }
+    }
+
     return YES;
 }
 
