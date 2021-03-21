@@ -98,18 +98,21 @@ static NSString *areaTag = @"--area--";
     for (NSString *info in can) {
        for (NSString *bianmaInfo in bianmaArr) {
            NSArray *bmArr = [bianmaInfo componentsSeparatedByString:@"-"];
-           NSString *bm = [bmArr firstObject];
-           NSString *ren = [bmArr lastObject];
-           if ([info containsString:bm]) {
-               NSString *s = [NSString stringWithFormat:@"%@%@%@",info,areaTag,ren];
-               NSString *str1 = [s stringByRemovingPercentEncoding];
-               [resu addObject:str1];
-               break;
+           if (bmArr.count > 4) {
+               NSString *bm = bmArr[1];
+               NSString *ren = [NSString stringWithFormat:@"%@---%@",bmArr[2],bmArr[3]];
+               if ([info containsString:bm]) {
+                   NSString *s = [NSString stringWithFormat:@"%@%@%@",info,areaTag,ren];
+                   NSString *str1 = [s stringByRemovingPercentEncoding];
+                   [resu addObject:str1];
+                   break;
+               }
            }
+           
+           
            
        }
         index = index + 1;
-        NSLog(@"%ld / %ld",(long)index, (long)total);
     }
     return resu;
 }
@@ -162,7 +165,7 @@ static NSString *areaTag = @"--area--";
     if (payPeopleCountArray) {
         return payPeopleCountArray;
     }
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"报名数量表" ofType:@"txt"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"报名统计" ofType:@"txt"];
     NSString *content = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     NSArray *arr = [content componentsSeparatedByString:@"\n"];
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:arr.count];
@@ -186,17 +189,94 @@ static NSString *areaTag = @"--area--";
         BOOL isNum = [RegExp validatePassword:temp];
         BOOL isChina = [RegExp validateNickname:temp];
         if ([type isEqualToString:@"NSTaggedPointerString"] && !isNum && !isChina && [temp intValue] == 0) {
-            [resu stringByReplacingCharactersInRange:range withString:@" "];
-            break;
+            resu = [resu stringByReplacingCharactersInRange:range withString:@"姜"];
+            
+        } else {
+            
         }
     }
-    
-    return resu;
+    // 把多余的空格替换掉（保证每个字端之间，只有一个空格）
+    NSString *r = @"";
+    NSString *lastStr = @"";
+    for(int i =0; i < [resu length]; i++) {
+        NSRange range = NSMakeRange(i, 1);
+        temp = [resu substringWithRange:range];
+        
+        if ([temp isEqualToString:@"姜"]) {
+            if (![lastStr isEqualToString:@"姜"]) {
+                r = [NSString stringWithFormat:@"%@%@",r,@" "];
+            }
+        } else {
+            r = [NSString stringWithFormat:@"%@%@",r,temp];
+        }
+        lastStr = temp;
+    }
+    return r;
+}
+
++ (NSArray *)handleFormSimple:(NSArray *)shiArr formName: (NSString *)formName {
+    NSMutableArray *array_tatal = [NSMutableArray arrayWithCapacity:100]; // 不分组
+    for (NSString *fo in shiArr) {
+        NSString *myStr = [self replaceSepText:fo];
+        NSArray *a = [myStr componentsSeparatedByString:@" "];
+        NSMutableArray *realArr = [NSMutableArray arrayWithCapacity:30];
+        // 去掉纯空格元素
+        for (id obj in a) {
+            if (![obj isEqualToString:@""]) {
+                [realArr addObject:obj];
+            }
+        }
+        BOOL special = NO;  // 专业
+        BOOL qt = NO; // 其他
+        
+        NSString * zhuanyeStr = @"";
+        if (a.count > 9) {
+            zhuanyeStr = a[8];
+        }
+        
+        special = (
+                   [zhuanyeStr containsString:@"不限"]
+                   || [zhuanyeStr containsString:@"无要求"]
+                   || [zhuanyeStr containsString:@"电子商务"]
+                   || [zhuanyeStr containsString:@"电子商务类"]
+                    );
+        
+        qt = (
+              ![myStr containsString:@"村官"]
+              && [myStr containsString:@"具有助理社会工作师及以上资格证书"]
+              && ![myStr containsString:@"团员"]
+              && ![myStr containsString:@"彝语"]
+              && ![myStr containsString:@"党员"]
+              && ![myStr containsString:@"三支一扶"]
+              && ![myStr containsString:@"具有英语六级证书"]
+              && ![myStr containsString:@"英语六级"]
+              && ![myStr containsString:@"具有英语四级证书"]
+              && ![myStr containsString:@"英语四级"]
+              && ![myStr containsString:@"限应届高等院校毕业生报考"]
+              && ![myStr containsString:@"限高校应届毕业生"]
+              && ![myStr containsString:@"30周岁"]
+              && ![myStr containsString:@"女性"]
+              && ![myStr containsString:@"2021年应届高校毕业生"]
+              && ![myStr containsString:@"2020年及以后年度毕业的高校毕业生"]
+              && ![myStr containsString:@"2019年及以后年度毕业的高校毕业生"]
+              && ![myStr containsString:@"2018年及以后年度毕业的高校毕业生"]
+              && ![myStr containsString:@"2017年及以后年度毕业的高校毕业生"]
+              && ![myStr containsString:@"2016年及以后年度毕业的高校毕业生"]
+              && ![myStr containsString:@"2015年及以后年度毕业的高校毕业生"]
+              && ![myStr containsString:@"限普通高等学校2021年应届毕业生"]
+              );
+        if (special && qt) {
+            NSString *myInfo = [NSString stringWithFormat:@"%@%@%@",myStr,groupTag,formName];
+            [array_tatal addObject:myInfo];
+            
+        }
+        
+    }
+    return array_tatal;
 }
 
 + (NSArray *)handleForm:(NSArray *)shiArr formName: (NSString *)formName {
     NSMutableArray *array_tatal = [NSMutableArray arrayWithCapacity:100]; // 不分组
-    NSLog(@"开始读取%@的数据",formName);
     for (NSString *fo in shiArr) {
         NSString *myStr = [self replaceSepText:fo];
         NSArray *a = [myStr componentsSeparatedByString:@" "];
@@ -260,8 +340,8 @@ static NSString *areaTag = @"--area--";
         
         qt = (
 //              ([myStr containsString:@"四川"] || [myStr containsString:@"成都"])
-//              ![myStr containsString:@"西部地区和艰苦边远地区职位"]
-              ![myStr containsString:@"具有英语六级证书"]
+              ![myStr containsString:@"30周岁及以下"]
+              && ![myStr containsString:@"具有英语六级证书"]
               && ![myStr containsString:@"英语六级"]
               && ![myStr containsString:@"具有英语四级证书"]
               && ![myStr containsString:@"英语四级"]
@@ -292,33 +372,31 @@ static NSString *areaTag = @"--area--";
         }
         
     }
-    NSLog(@"%@筛选后的数据：%ld",formName,array_tatal.count);
     return array_tatal;
 }
 
 + (void)calculateICanArr {
     
-    NSArray *arr1 = [self getDataSource:@"中央党群机关"];
-    NSArray *a1 = [self handleForm:arr1 formName:@"中央党群机关"];
-    
-    NSArray *arr2 = [self getDataSource:@"中央国家机关本级"];
-    NSArray *a2 = [self handleForm:arr2 formName:@"中央国家机关本级"];
-    
-    NSArray *arr3 = [self getDataSource:@"中央国家机关省级及以下级"];
-    NSArray *a3 = [self handleForm:arr3 formName:@"中央国家机关省级及以下级"];
-    
-    NSArray *arr4 = [self getDataSource:@"中央国家行政机关参公事业单位"];
-    NSArray *a4 = [self handleForm:arr4 formName:@"中央国家行政机关参公事业单位"];
+    NSArray *arr1 = [self getDataSource:@"报名表"];
+//    NSArray *a1 = [self handleForm:arr1 formName:@"报名表"];
+    NSArray *a1 = [self handleFormSimple:arr1 formName:@"报名表"];
+ 
+//    NSArray *arr2 = [self getDataSource:@"中央国家机关本级"];
+//    NSArray *a2 = [self handleForm:arr2 formName:@"中央国家机关本级"];
+//
+//    NSArray *arr3 = [self getDataSource:@"中央国家机关省级及以下级"];
+//    NSArray *a3 = [self handleForm:arr3 formName:@"中央国家机关省级及以下级"];
+//
+//    NSArray *arr4 = [self getDataSource:@"中央国家行政机关参公事业单位"];
+//    NSArray *a4 = [self handleForm:arr4 formName:@"中央国家行政机关参公事业单位"];
     NSMutableArray *array_tatal = [NSMutableArray arrayWithCapacity:100]; // 不分组
     [array_tatal addObjectsFromArray:a1];
-    [array_tatal addObjectsFromArray:a2];
-    [array_tatal addObjectsFromArray:a3];
-    [array_tatal addObjectsFromArray:a4];
+//    [array_tatal addObjectsFromArray:a2];
+//    [array_tatal addObjectsFromArray:a3];
+//    [array_tatal addObjectsFromArray:a4];
     
-    NSLog(@"共有%ld职位可报考",array_tatal.count);
-    for (NSString *obj in array_tatal) {
-        NSLog(@"%ld.----%@",[array_tatal indexOfObject:obj],obj);
-    }
+//    for (NSString *obj in array_tatal) {
+//    }
     if (ICanArray == nil) {
         ICanArray = array_tatal;
     }
@@ -327,12 +405,12 @@ static NSString *areaTag = @"--area--";
 
 
 + (NSArray *)formData {
-    NSArray *keys = @[@"中央党群机关",@"中央国家机关本级",@"中央国家机关省级及以下级",@"中央国家行政机关参公事业单位"];
+    NSArray *keys = @[@"报名表"];
     return keys;
 }
 
 + (NSArray *)getListSource {
-    NSArray *keys = @[@"1111",@"222222",@"33333"];
+    NSArray *keys = @[@"查看"];
     return keys;
 }
 

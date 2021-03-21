@@ -15,13 +15,14 @@
 		6F360F282497CA9A0066E67D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F262497CA9A0066E67D /* LaunchScreen.storyboard */; };
 		6F360F2B2497CA9A0066E67D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F360F2A2497CA9A0066E67D /* main.m */; };
 		6F360F372497CAA60066E67D /* ExcelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F360F322497CAA60066E67D /* ExcelViewController.m */; };
-		6F360F382497CAA60066E67D /* 报名数量表.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F332497CAA60066E67D /* 报名数量表.txt */; };
 		6F360F392497CAA60066E67D /* ExcelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F360F342497CAA60066E67D /* ExcelCell.m */; };
 		6F360F3C2497CBD40066E67D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F360F3B2497CBD40066E67D /* BaseViewController.m */; };
 		6F360F3F2497CE220066E67D /* FromData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F360F3E2497CE220066E67D /* FromData.m */; };
-		6F360F412497D69F0066E67D /* 中央党群机关.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6F360F402497D69F0066E67D /* 中央党群机关.txt */; };
 		6F734FCE258B50A200056877 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F734FCD258B50A200056877 /* BaseTableViewController.m */; };
 		6F734FD2258B680B00056877 /* CusTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F734FD1258B680B00056877 /* CusTableViewCell.m */; };
+		6FD0588126072D7100195B2C /* 雅安.xls in Resources */ = {isa = PBXBuildFile; fileRef = 6FD0587C26072D7000195B2C /* 雅安.xls */; };
+		6FD0588326072D7100195B2C /* 报名统计.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6FD0587E26072D7000195B2C /* 报名统计.txt */; };
+		6FD0588426072D7100195B2C /* 报名表.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6FD0588026072D7100195B2C /* 报名表.txt */; };
 		6FF528BC258C36BF00C1FB64 /* FeedBackListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF528BB258C36BF00C1FB64 /* FeedBackListController.m */; };
 		6FF528F8258C3D2700C1FB64 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF528C1258C3D2700C1FB64 /* UIScrollView+MJRefresh.m */; };
 		6FF528F9258C3D2700C1FB64 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF528C2258C3D2700C1FB64 /* MJRefreshConst.m */; };
@@ -51,9 +52,6 @@
 		6FF5291F258C4DD400C1FB64 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF5291C258C4DD400C1FB64 /* BaseModel.m */; };
 		6FF52920258C4DD400C1FB64 /* Http.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF5291D258C4DD400C1FB64 /* Http.m */; };
 		6FF52925258C4DDA00C1FB64 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF52923258C4DD900C1FB64 /* Toast.m */; };
-		6FFD0D7F253D337200EB40F9 /* 中央国家行政机关参公事业单位.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6FFD0D7C253D337200EB40F9 /* 中央国家行政机关参公事业单位.txt */; };
-		6FFD0D80253D337200EB40F9 /* 中央国家机关本级.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6FFD0D7D253D337200EB40F9 /* 中央国家机关本级.txt */; };
-		6FFD0D81253D337200EB40F9 /* 中央国家机关省级及以下级.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6FFD0D7E253D337200EB40F9 /* 中央国家机关省级及以下级.txt */; };
 		AC083042249B006300D68DDD /* RegExp.m in Sources */ = {isa = PBXBuildFile; fileRef = AC083041249B006300D68DDD /* RegExp.m */; };
 		ACAEFEAF24987A6000B88214 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAEFE9624987A6000B88214 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		ACAEFEB024987A6000B88214 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAEFE9F24987A6000B88214 /* ViewController+MASAdditions.m */; };
@@ -82,7 +80,6 @@
 		6F360F292497CA9A0066E67D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F360F2A2497CA9A0066E67D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6F360F322497CAA60066E67D /* ExcelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExcelViewController.m; sourceTree = "<group>"; };
-		6F360F332497CAA60066E67D /* 报名数量表.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "报名数量表.txt"; sourceTree = "<group>"; };
 		6F360F342497CAA60066E67D /* ExcelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExcelCell.m; sourceTree = "<group>"; };
 		6F360F352497CAA60066E67D /* ExcelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExcelViewController.h; sourceTree = "<group>"; };
 		6F360F362497CAA60066E67D /* ExcelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExcelCell.h; sourceTree = "<group>"; };
@@ -90,11 +87,13 @@
 		6F360F3B2497CBD40066E67D /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		6F360F3D2497CE220066E67D /* FromData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FromData.h; sourceTree = "<group>"; };
 		6F360F3E2497CE220066E67D /* FromData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FromData.m; sourceTree = "<group>"; };
-		6F360F402497D69F0066E67D /* 中央党群机关.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "中央党群机关.txt"; sourceTree = "<group>"; };
 		6F734FCC258B50A200056877 /* BaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		6F734FCD258B50A200056877 /* BaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		6F734FD0258B680B00056877 /* CusTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CusTableViewCell.h; sourceTree = "<group>"; };
 		6F734FD1258B680B00056877 /* CusTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CusTableViewCell.m; sourceTree = "<group>"; };
+		6FD0587C26072D7000195B2C /* 雅安.xls */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雅安.xls"; sourceTree = "<group>"; };
+		6FD0587E26072D7000195B2C /* 报名统计.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "报名统计.txt"; sourceTree = "<group>"; };
+		6FD0588026072D7100195B2C /* 报名表.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "报名表.txt"; sourceTree = "<group>"; };
 		6FF528BA258C36BF00C1FB64 /* FeedBackListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedBackListController.h; sourceTree = "<group>"; };
 		6FF528BB258C36BF00C1FB64 /* FeedBackListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedBackListController.m; sourceTree = "<group>"; };
 		6FF528C1258C3D2700C1FB64 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
@@ -153,9 +152,6 @@
 		6FF5291E258C4DD400C1FB64 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		6FF52923258C4DD900C1FB64 /* Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
 		6FF52924258C4DD900C1FB64 /* Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
-		6FFD0D7C253D337200EB40F9 /* 中央国家行政机关参公事业单位.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "中央国家行政机关参公事业单位.txt"; sourceTree = "<group>"; };
-		6FFD0D7D253D337200EB40F9 /* 中央国家机关本级.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "中央国家机关本级.txt"; sourceTree = "<group>"; };
-		6FFD0D7E253D337200EB40F9 /* 中央国家机关省级及以下级.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "中央国家机关省级及以下级.txt"; sourceTree = "<group>"; };
 		AC083040249B006300D68DDD /* RegExp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegExp.h; sourceTree = "<group>"; };
 		AC083041249B006300D68DDD /* RegExp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegExp.m; sourceTree = "<group>"; };
 		ACAEFE9524987A6000B88214 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -254,6 +250,23 @@
 				ACB9390F249B44EF0017EF7C /* ExcelGroupViewController.m */,
 			);
 			path = ExcelFrom;
+			sourceTree = "<group>";
+		};
+		6FD0587B26072D7000195B2C /* tongjibiao */ = {
+			isa = PBXGroup;
+			children = (
+				6FD0587C26072D7000195B2C /* 雅安.xls */,
+				6FD0587E26072D7000195B2C /* 报名统计.txt */,
+			);
+			path = tongjibiao;
+			sourceTree = "<group>";
+		};
+		6FD0587F26072D7000195B2C /* gangwei */ = {
+			isa = PBXGroup;
+			children = (
+				6FD0588026072D7100195B2C /* 报名表.txt */,
+			);
+			path = gangwei;
 			sourceTree = "<group>";
 		};
 		6FF528C0258C3D2700C1FB64 /* MJRefresh */ = {
@@ -421,11 +434,8 @@
 		AC58D046249AF5A300D09335 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				6F360F402497D69F0066E67D /* 中央党群机关.txt */,
-				6FFD0D7D253D337200EB40F9 /* 中央国家机关本级.txt */,
-				6FFD0D7E253D337200EB40F9 /* 中央国家机关省级及以下级.txt */,
-				6FFD0D7C253D337200EB40F9 /* 中央国家行政机关参公事业单位.txt */,
-				6F360F332497CAA60066E67D /* 报名数量表.txt */,
+				6FD0587F26072D7000195B2C /* gangwei */,
+				6FD0587B26072D7000195B2C /* tongjibiao */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -529,15 +539,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F360F412497D69F0066E67D /* 中央党群机关.txt in Resources */,
+				6FD0588126072D7100195B2C /* 雅安.xls in Resources */,
 				6F360F282497CA9A0066E67D /* LaunchScreen.storyboard in Resources */,
-				6FFD0D81253D337200EB40F9 /* 中央国家机关省级及以下级.txt in Resources */,
+				6FD0588326072D7100195B2C /* 报名统计.txt in Resources */,
 				6F360F252497CA9A0066E67D /* Assets.xcassets in Resources */,
-				6F360F382497CAA60066E67D /* 报名数量表.txt in Resources */,
 				6F360F232497CA980066E67D /* Main.storyboard in Resources */,
-				6FFD0D80253D337200EB40F9 /* 中央国家机关本级.txt in Resources */,
-				6FFD0D7F253D337200EB40F9 /* 中央国家行政机关参公事业单位.txt in Resources */,
 				6FF528FB258C3D2700C1FB64 /* MJRefresh.bundle in Resources */,
+				6FD0588426072D7100195B2C /* 报名表.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
