@@ -52,6 +52,16 @@
     return _array.count;
 }
 
+- (NSMutableAttributedString *)check:(NSString *)text {
+    if (![text containsString:@"电子商务"]) {
+        return nil;
+    }
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:text];
+    NSRange range = [text rangeOfString:@"电子商务"];
+    [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:range];
+    return attrStr;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -59,7 +69,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     NSString *dataStr = _array[indexPath.row];
-    cell.textLabel.text = dataStr;
+    NSMutableAttributedString *attrStr = nil; //[self check:dataStr];
+    if (attrStr) {
+        cell.textLabel.attributedText = attrStr;
+    } else {
+        cell.textLabel.text = dataStr;
+    }
+    
     return cell;
 }
 

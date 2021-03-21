@@ -243,7 +243,8 @@ static NSString *areaTag = @"--area--";
         
         qt = (
               ![myStr containsString:@"村官"]
-              && [myStr containsString:@"具有助理社会工作师及以上资格证书"]
+              && [myStr containsString:@"具有2年及以上基层工作经历"]
+              && ![myStr containsString:@"具有助理社会工作师及以上资格证书"]
               && ![myStr containsString:@"团员"]
               && ![myStr containsString:@"彝语"]
               && ![myStr containsString:@"党员"]
